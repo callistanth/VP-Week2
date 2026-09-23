@@ -14,11 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.MoreHoriz
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
@@ -32,7 +30,8 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import androidx.compose.runtime.*
 import androidx.compose.material3.*
-
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 
 
 class MainActivity : ComponentActivity() {
@@ -122,14 +121,66 @@ fun spotify(){
         Spacer(modifier = Modifier.height(16.dp))
 
         Column(modifier = Modifier.fillMaxWidth()) {
-            Slider(
-                value = sliderPosition,
-                onValueChange = { sliderPosition = it},
-                colors = SliderDefaults.colors(
-                    
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(3.dp)
+                    .background(Color.Black, shape = RoundedCornerShape(2.dp))
+            )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = "0:00",
+                    fontSize = 12.sp,
+                    color = Color.Black.copy(alpha = 0.7f)
                 )
+                Text(
+                    text = "-2:12",
+                    fontSize = 12.sp,
+                    color = Color.Black.copy(alpha = 0.7f)
+                )
+            }
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = Icons.Default.SkipPrevious,
+                contentDescription = "Previous",
+                tint = Color.Black,
+                modifier = Modifier.size(40.dp)
+            )
+            Box(
+                modifier = Modifier
+                    .size(72.dp)
+                    .background(Color.Black, shape = CircleShape),
+                contentAlignment = Alignment.Center
+            ){
+                Icon(
+                    imageVector = Icons.Default.Pause,
+                    contentDescription = "Pause",
+                    tint = Color.White,
+                    modifier = Modifier.size(36.dp)
+                )
+            }
+            Icon(
+                imageVector = Icons.Default.SkipNext,
+                contentDescription = "Next",
+                tint = Color.Black,
+                modifier = Modifier.size(40.dp)
             )
         }
+        Spacer(modifier = Modifier.height(32.dp))
+
+
     }
 }
 
