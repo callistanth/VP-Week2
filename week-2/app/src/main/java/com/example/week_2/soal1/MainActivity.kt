@@ -180,7 +180,97 @@ fun spotify(){
         }
         Spacer(modifier = Modifier.height(32.dp))
 
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .background(
+                    color = Color(0xFF421A1A),
+                    shape = RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)
+                )
+                .padding(horizontal = 20.dp, vertical = 16.dp)
+        ){
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+            ) {
+                Text(
+                    text = "Lyrics",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(16.dp))
 
+                Text(
+                    text = "I don't care what people say\n" +
+                            "We both know I couldn't change you\n" +
+                            "I guess you could say the same\n" +
+                            "Can't rearrange truth\n" +
+                            "I've never seen someone lie like you do\n" +
+                            "So much, even you start to think it's true\n" +
+                            "Get me out of this loop\n" +
+                            "So now we play our separate scenes\n" +
+                            "Now, now she's in my bed laying on your chest\n" +
+                            "Now I'm in my head, wondering how it ends\n" +
+                            "I'll be the first to say I'm sorry\n" +
+                            "Now you got me feeling sorry\n" +
+                            "I showed you all my demons, all my lies\n" +
+                            "Yet you played me like Atari\n" +
+                            "Now it's like I'm looking in the mirror\n" +
+                            "Hope you feel alright when you're in her\n" +
+                            "I found a good boy and he's on my side\n" +
+                            "You're just my eternal sunshine, sunshine\n" +
+                            "So I try to wipe my mind\n" +
+                            "Just so I feel less insane\n" +
+                            "Rather feel painless\n" +
+                            "I'd rather forget than know, know for sure\n" +
+                            "What we could've fought through behind this door\n" +
+                            "So I close it and move\n" +
+                            "So now we play our separate scenes\n" +
+                            "Now, now he's in your bed, laying on my chest\n" +
+                            "Now I'm in my head, wondering how it ends, ends, ends\n" +
+                            "I'll be the first to say I'm sorry\n" +
+                            "Now you got me feeling sorry\n" +
+                            "I showed you all my demons, all my lies\n" +
+                            "Yet you played me like Atari\n" +
+                            "Now it's like I'm looking in the mirror\n" +
+                            "Hope you feel alright when you're in her\n" +
+                            "I found a good boy and he's on my side\n" +
+                            "You're just my eternal sunshine, sunshine\n" +
+                            "Won't break, can't shake\n" +
+                            "This fate, rewrite\n" +
+                            "Deep breaths, tight chest\n" +
+                            "Life, death, rewind\n" +
+                            "Won't break, can't shake\n" +
+                            "This fate, rewrite\n" +
+                            "Deep breaths, tight chest\n" +
+                            "Life, death\n" +
+                            "I'll be the first to say I'm sorry\n" +
+                            "Now you got me feeling sorry\n" +
+                            "I showed you all my demons, all my lies\n" +
+                            "Yet you played me like Atari\n" +
+                            "Now it's like I'm looking in the mirror\n" +
+                            "Hope you feel alright when you're in her\n" +
+                            "I found a good boy and he's on my side\n" +
+                            "You're just my eternal sunshine, sunshine\n" +
+                            "Won't break, can't shake\n" +
+                            "This fate, rewrite\n" +
+                            "Deep breaths, tight chest\n" +
+                            "Life, death, rewind\n" +
+                            "Won't break, can't shake\n" +
+                            "This fate, rewrite\n" +
+                            "Deep breaths, tight chest\n" +
+                            "Life, death",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White,
+                    lineHeight = 26.sp
+                )
+                Spacer(modifier = Modifier.height(24.dp))
+            }
+        }
     }
 }
 
