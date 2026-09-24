@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.week1"
+    namespace = "com.example.week_2"
     compileSdk {
         version = release(37)
     }
@@ -52,5 +52,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation("androidx.compose.material:material-icons-extended:1.6.8")
-    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation("io.coil-kt:coil-compose:2.7.0")
 }

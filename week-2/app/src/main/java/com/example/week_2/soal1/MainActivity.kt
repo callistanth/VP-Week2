@@ -22,16 +22,17 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
 import androidx.compose.runtime.*
-import androidx.compose.material3.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import com.example.week_2.R
 
 
 class MainActivity : ComponentActivity() {
@@ -50,7 +51,14 @@ fun spotify(){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFFFA5A5))
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFF2B1A06),
+                        Color(0xFF1A150F)
+                    )
+                )
+            )
             .statusBarsPadding()
             .navigationBarsPadding()
             .padding(horizontal = 24.dp),
@@ -66,30 +74,29 @@ fun spotify(){
             Icon(
                 imageVector = Icons.Default.KeyboardArrowDown,
                 contentDescription = "Back",
-                tint = Color.Black
+                tint = Color.White
             )
             Text(
                 text = "Liked Song",
-                color = Color.Black,
+                color = Color.White,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
             Icon(
                 imageVector = Icons.Default.MoreHoriz,
                 contentDescription = "Option",
-                tint = Color.Black
+                tint = Color.White
             )
         }
 
-        AsyncImage(
-            model = "https://gambarnya_gabisa_ko_R_ga_mau_diimport.jpg",
+        Image(
+            painter = painterResource(R.drawable.albumcover),
             contentDescription = "Album Cover",
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(1f)
                 .clip(RoundedCornerShape(12.dp))
-                .background(Color.DarkGray)
         )
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -100,21 +107,21 @@ fun spotify(){
         ) {
             Column {
                 Text(
-                    text = "Ga bisa ko fotonya",
+                    text = "eternal sunshine",
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = Color.White
                 )
                 Text(
-                    text = "Rnya gamau di import",
+                    text = "Ariana Grande",
                     fontSize = 16.sp,
-                    color = Color.Black.copy(alpha = 0.7f)
+                    color = Color.White.copy(alpha = 0.7f)
                 )
             }
             Icon(
                 imageVector = Icons.Default.Favorite,
                 contentDescription = "Like",
-                tint = Color.Black,
+                tint = Color.White,
                 modifier = Modifier.size(28.dp)
             )
         }
@@ -125,7 +132,7 @@ fun spotify(){
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(3.dp)
-                    .background(Color.Black, shape = RoundedCornerShape(2.dp))
+                    .background(Color.White, shape = RoundedCornerShape(2.dp))
             )
             Row(
                 modifier = Modifier
@@ -136,12 +143,12 @@ fun spotify(){
                 Text(
                     text = "0:00",
                     fontSize = 12.sp,
-                    color = Color.Black.copy(alpha = 0.7f)
+                    color = Color.White.copy(alpha = 0.7f)
                 )
                 Text(
                     text = "-2:12",
                     fontSize = 12.sp,
-                    color = Color.Black.copy(alpha = 0.7f)
+                    color = Color.White.copy(alpha = 0.7f)
                 )
             }
         }
@@ -155,26 +162,26 @@ fun spotify(){
             Icon(
                 imageVector = Icons.Default.SkipPrevious,
                 contentDescription = "Previous",
-                tint = Color.Black,
+                tint = Color.White,
                 modifier = Modifier.size(40.dp)
             )
             Box(
                 modifier = Modifier
-                    .size(72.dp)
-                    .background(Color.Black, shape = CircleShape),
+                    .size(62.dp)
+                    .background(Color.White, shape = CircleShape),
                 contentAlignment = Alignment.Center
             ){
                 Icon(
                     imageVector = Icons.Default.Pause,
                     contentDescription = "Pause",
-                    tint = Color.White,
+                    tint = Color.Black,
                     modifier = Modifier.size(36.dp)
                 )
             }
             Icon(
                 imageVector = Icons.Default.SkipNext,
                 contentDescription = "Next",
-                tint = Color.Black,
+                tint = Color.White,
                 modifier = Modifier.size(40.dp)
             )
         }
@@ -185,7 +192,7 @@ fun spotify(){
                 .fillMaxWidth()
                 .weight(1f)
                 .background(
-                    color = Color(0xFF421A1A),
+                    color = Color(0xFF2B1A06),
                     shape = RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)
                 )
                 .padding(horizontal = 20.dp, vertical = 16.dp)
